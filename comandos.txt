@@ -1,0 +1,7 @@
+docker run -d \
+  --name servicio-mysql \
+  --env-file .env \
+  -v $(pwd)/tablas.sql:/docker-entrypoint-initdb.d/tablas.sql \
+  -v mysql_data:/var/lib/mysql \
+  -p 3306:3306 \
+  mysql:8.4
